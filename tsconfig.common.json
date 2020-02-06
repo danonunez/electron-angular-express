@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false,
+    "outDir": "./dist/common",
+    "module": "commonjs",
+    "types": [
+      "node"
+    ]
+  },
+  "files": [
+    "src/common/constants.ts"
+  ],
+  "include": [
+    "src/common/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/backend/*.ts",
+    "src/backend/**/*.ts",
+    "src/browser/*.ts",
+    "src/browser/**/*.ts"
+  ]
+}

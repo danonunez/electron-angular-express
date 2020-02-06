@@ -1,0 +1,79 @@
+{
+  "name": "electron-angular-express",
+  "version": "1.0.0",
+  "description": "A simple base framework with Electron 8 / Angular 8 / Express 4",
+  "main": "dist/base.js",
+  "scripts": {
+    "build": "npm run postinstall:electron && npm run electron:tsc-base && ng build --base-href ./",
+    "build:prod": "npm run build -- -c production",
+    "electron:tsc-base": "tsc -p tsconfig.base.json",
+    "electron:local": "npm run build:prod && electron . --local",
+    "postinstall": "npm run postinstall:electron && electron-builder install-app-deps",
+    "postinstall:electron": "node postinstall",
+    "pub": "npm run build && npm version patch && npm publish && git push",
+    "sync": "git ac && git pull --rebase && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danoespinoza/electron-angular-express.git"
+  },
+  "engines": {
+    "node": "^10.0.0",
+    "npm": "^6.0.0"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/router": "~8.2.14",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "morgan": "^1.9.1",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.24",
+    "@angular/cli": "~8.3.24",
+    "@angular/compiler-cli": "~8.2.14",
+    "@angular/language-service": "~8.2.14",
+    "@types/compression": "^1.0.1",
+    "@types/cors": "^2.8.6",
+    "@types/helmet": "0.0.45",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/morgan": "^1.7.37",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.0",
+    "electron": "^8.0.0",
+    "electron-builder": "^22.3.2",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3"
+  },
+  "bugs": {
+    "url": "https://github.com/danoespinoza/electron-angular-express/issues"
+  },
+  "keywords": [
+    "electron",
+    "angular",
+    "express"
+  ],
+  "author": "Dano Espinoza",
+  "license": "MIT"
+}

@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false,
+    "outDir": "./dist/backend",
+    "module": "commonjs",
+    "types": [
+      "node"
+    ]
+  },
+  "files": [
+    "src/backend/express-app.ts",
+  ],
+  "include": [
+    "src/backend/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/browser/*.ts",
+    "src/browser/**/*.ts",
+    "src/common/*.ts",
+    "src/common/**/*.ts"
+  ]
+}
